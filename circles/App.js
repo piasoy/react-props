@@ -5,7 +5,7 @@ const App = (props) => {
     //circles property is an array so to render it, you have to map through it
     const Circles = circles.map(Circle)
     return (
-        <span>{Circles}</span>
+        <div>{Circles}</div>
     )
 }
 
