@@ -1,7 +1,13 @@
 // Render the rectangle using React!
 const App = (props) => {
     let { rectangle } = props;
+
+    let rectangleStyle = {
+        height: rectangle.height,
+        width: rectangle.width,
+        backgroundColor: rectangle.color
+    }
     return (
-        <span>rectangle</span>
+        <div style={rectangleStyle}></div>
     )
 }
