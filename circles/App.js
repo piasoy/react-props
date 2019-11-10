@@ -10,7 +10,7 @@ const App = (props) => {
 }
 
 //const Circle = null;  // CHALLENGE: Write a separate Circle component for use in the App component
-const Circle = (props) => {
+const Circle = (props, index) => {
      //console.log('Circle component props:', props) 
      //Circle property is radius & color
     //create style attribute value that is an object
@@ -25,6 +25,6 @@ const Circle = (props) => {
     //style attribute accepts JS object instead of string
     // ? why is in it curly bracket?
      return (
-         <div style={circleStyle}></div>
+         <div key={index} style={circleStyle}></div>
      )
 }

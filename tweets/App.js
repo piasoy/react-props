@@ -10,21 +10,21 @@ const App = (props) => {
 }
 
 //const Tweet = null;  // CHALLENGE: Write a separate Tweet component for use in the App component
-const Tweet = (props) => {
+const Tweet = (props, index) => {
     //console.log(props)
     let {user, text, likes, retweets, replies} = props
     let TweetDivStyle = {
         marginTop:'50px'
     }
-    return (<div style={TweetDivStyle}>
+    return (<div key={index} style={TweetDivStyle}>
                 <User user={user} />
                 <h2>{text}</h2>
-                <Metrics props={props} />
+                <Metrics replies={replies} retweets={retweets} likes={likes}/>
             </div>)
 }
 //const User = null;  // CHALLENGE: Write a separate User component for use in the Tweet component
 const User = (props) => {
-    console.log(props)
+    //console.log(props)
     let { user } = props
     let UserOuterDivStyle = {
         display:'flex',
@@ -44,7 +44,6 @@ const User = (props) => {
     let checkImg = "twitterIcons/check-circle.svg"
 
     const isVerified = (user) => {
-        console.log('isVerified', user.isVerified)
         return (user.isVerified ? checkImg : '')
     }
    
@@ -62,7 +61,8 @@ const User = (props) => {
 }
 //const Metrics = null;  // CHALLENGE: Write a separate Metrics component for use in the Tweet component (likes, retweets, replies)
 const Metrics = (props) => {
-    //console.log(props)
+   
+   
     let MetricsOuterDivStyle = {
         display: 'flex',
         flowDirection: 'row',
